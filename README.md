@@ -149,6 +149,112 @@ EOF  all  create  destroy  help  quit  show  update
 ** no instance found **
 (hbnb) quit
 ```
+### AirBnB Clone - RESTful API
+
+## Description
+This is the third version of our AirBnB clone project. This version focuses on creating a RESTful API using Python Flask and integrating it with our existing storage engines (File Storage and Database Storage).
+
+## Features
+- RESTful API endpoints for AirBnB objects
+- Support for both File Storage and DB Storage
+- Cross-Origin Resource Sharing (CORS) support
+- Complete error handling
+- Comprehensive testing suite
+
+## API Endpoints
+
+### Status
+- `GET /api/v1/status` - Get API status
+- `GET /api/v1/stats` - Get count of objects by type
+
+### States
+- `GET /api/v1/states` - List all states
+- `GET /api/v1/states/<state_id>` - Get specific state
+- `POST /api/v1/states` - Create a new state
+- `PUT /api/v1/states/<state_id>` - Update a state
+- `DELETE /api/v1/states/<state_id>` - Delete a state
+
+### Cities
+- `GET /api/v1/states/<state_id>/cities` - List all cities of a state
+- `GET /api/v1/cities/<city_id>` - Get specific city
+- `POST /api/v1/states/<state_id>/cities` - Create a new city
+- `PUT /api/v1/cities/<city_id>` - Update a city
+- `DELETE /api/v1/cities/<city_id>` - Delete a city
+
+### Users
+- `GET /api/v1/users` - List all users
+- `GET /api/v1/users/<user_id>` - Get specific user
+- `POST /api/v1/users` - Create a new user
+- `PUT /api/v1/users/<user_id>` - Update a user
+- `DELETE /api/v1/users/<user_id>` - Delete a user
+
+### Places
+- `GET /api/v1/cities/<city_id>/places` - List all places of a city
+- `GET /api/v1/places/<place_id>` - Get specific place
+- `POST /api/v1/cities/<city_id>/places` - Create a new place
+- `PUT /api/v1/places/<place_id>` - Update a place
+- `DELETE /api/v1/places/<place_id>` - Delete a place
+- `POST /api/v1/places_search` - Search places with filters
+
+### Reviews
+- `GET /api/v1/places/<place_id>/reviews` - List all reviews of a place
+- `GET /api/v1/reviews/<review_id>` - Get specific review
+- `POST /api/v1/places/<place_id>/reviews` - Create a new review
+- `PUT /api/v1/reviews/<review_id>` - Update a review
+- `DELETE /api/v1/reviews/<review_id>` - Delete a review
+
+### Amenities
+- `GET /api/v1/amenities` - List all amenities
+- `GET /api/v1/amenities/<amenity_id>` - Get specific amenity
+- `POST /api/v1/amenities` - Create a new amenity
+- `PUT /api/v1/amenities/<amenity_id>` - Update an amenity
+- `DELETE /api/v1/amenities/<amenity_id>` - Delete an amenity
+
+## Storage
+The API supports two storage types:
+- File Storage
+- Database Storage (MySQL)
+
+## Setup
+```bash
+# Clone the repository
+git clone https://github.com/[your-username]/AirBnB_clone_v3.git
+
+# Install dependencies
+pip3 install -r requirements.txt
+
+# Set environment variables
+export HBNB_TYPE_STORAGE=db
+export HBNB_MYSQL_USER=hbnb_dev
+export HBNB_MYSQL_PWD=hbnb_dev_pwd
+export HBNB_MYSQL_HOST=localhost
+export HBNB_MYSQL_DB=hbnb_dev_db
+export HBNB_API_HOST=0.0.0.0
+export HBNB_API_PORT=5000
+```
+
+## Running the API
+```bash
+python3 -m api.v1.app
+```
+
+## Testing
+```bash
+python3 -m unittest discover tests
+```
+
+## Security Features
+- Password hashing using MD5
+- Error handling for invalid requests
+- Input validation
+- CORS support for specified origins
+
+## Requirements
+- Python 3.4.3 or later
+- Flask 1.0.2
+- MySQL 5.7
+- SQLAlchemy
+- Flask-CORS
 
 ## Bugs
 No known bugs at this time. 
@@ -156,7 +262,7 @@ No known bugs at this time.
 ## Authors
 Alexa Orrico - [Github](https://github.com/alexaorrico) / [Twitter](https://twitter.com/alexa_orrico)  
 Jennifer Huang - [Github](https://github.com/jhuang10123) / [Twitter](https://twitter.com/earthtojhuang)
-
+Third part: Shighi
 Second part of Airbnb: Joann Vuong
 ## License
 Public Domain. No copy write protection. 
